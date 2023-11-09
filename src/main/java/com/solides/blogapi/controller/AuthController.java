@@ -50,7 +50,6 @@ public class AuthController {
         this.roleRepository = roleRepository;
     }
 
-
     @PostMapping("/signIn")
     public ResponseEntity<JwtAuthenticationResponse> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
         Authentication authentication = authenticationManager.authenticate(
@@ -65,11 +64,11 @@ public class AuthController {
     @PostMapping("/signUp")
     public ResponseEntity<ApiResponse> registerUser(@Valid @RequestBody SignUpRequest signUpRequest) {
         if (Boolean.TRUE.equals(userRepository.existsByUsername(signUpRequest.getUsername()))) {
-            throw new BlogApiException(HttpStatus.BAD_REQUEST, "Username is already taken");
+            throw new BlogApiException(HttpStatus.BAD_REQUEST, "UserName já cadastrado.");
         }
 
         if (Boolean.TRUE.equals(userRepository.existsByEmail(signUpRequest.getEmail()))) {
-            throw new BlogApiException(HttpStatus.BAD_REQUEST, "Email is already taken");
+            throw new BlogApiException(HttpStatus.BAD_REQUEST, "Email já cadastrado.");
         }
 
         String username = signUpRequest.getUsername().toLowerCase();
@@ -99,6 +98,6 @@ public class AuthController {
         URI location = ServletUriComponentsBuilder.fromCurrentContextPath().path("/api/users/{userId}")
                 .buildAndExpand(result.getId()).toUri();
 
-        return ResponseEntity.created(location).body(new ApiResponse(Boolean.TRUE, "User registered successfully"));
+        return ResponseEntity.created(location).body(new ApiResponse(Boolean.TRUE, "Usuario registrado com sucesso."));
     }
 }
