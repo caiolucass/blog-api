@@ -7,6 +7,7 @@ import com.solides.blogapi.model.role.RoleName;
 import com.solides.blogapi.payload.UserIdentityAvailability;
 import com.solides.blogapi.payload.UserProfile;
 import com.solides.blogapi.payload.UserSummary;
+import com.solides.blogapi.payload.request.InfoRequest;
 import com.solides.blogapi.payload.response.ApiResponse;
 import com.solides.blogapi.repository.PostRepository;
 import com.solides.blogapi.repository.RoleRepository;
