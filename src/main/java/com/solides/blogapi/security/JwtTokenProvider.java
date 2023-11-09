@@ -1,7 +1,7 @@
 package com.solides.blogapi.security;
 
 import io.jsonwebtoken.*;
-import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
+import org.springframework.security.core.Authentication;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
