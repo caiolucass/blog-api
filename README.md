@@ -1,6 +1,8 @@
 # 💻blog-api
 
-## Clonar a aplicação
+1. Clonar a aplicação
+
+> git clone https://github.com/caiolucass/blog-api
 
 ### Auth
 
