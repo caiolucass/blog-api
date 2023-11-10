@@ -6,8 +6,7 @@
 
 ## Tecnologias utilizadas:
 
-- [Spring Boot](https://spring.io/)
-- [Postgres](https://www.postgresql.org/)
+- [Spring Boot](https://spring.io/) [Postgres](https://www.postgresql.org/)
 - [Spring Security](https://spring.io/projects/spring-security)
 - [JSONWebToken](https://jwt.io/)
 - [JPA](https://spring.io/projects/spring-data-jpa)
