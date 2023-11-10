@@ -4,7 +4,7 @@
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
-Spring Boot, Postgres, Spring Security, JWT, JPA, Rest API
+> Spring Boot, Postgres, Spring Security, JWT, JPA, Rest API
 
 ## Instruções para o uso da API
 
