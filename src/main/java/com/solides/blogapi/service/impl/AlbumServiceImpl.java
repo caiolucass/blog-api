@@ -14,6 +14,7 @@ import com.solides.blogapi.repository.UserRepository;
 import com.solides.blogapi.security.UserPrincipal;
 import com.solides.blogapi.service.AlbumService;
 import com.solides.blogapi.utils.AppUtils;
+import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -31,6 +32,7 @@ import java.util.List;
 import static com.solides.blogapi.utils.AppConstants.ID;
 
 @Service
+@RequiredArgsConstructor
 public class AlbumServiceImpl implements AlbumService {
     private static final String CREATED_AT = "createdAt";
 
@@ -42,13 +44,7 @@ public class AlbumServiceImpl implements AlbumService {
 
     private final UserRepository userRepository;
 
-    private final ModelMapper modelMapper;
-
-    public AlbumServiceImpl(AlbumRepository albumRepository, UserRepository userRepository, ModelMapper modelMapper) {
-        this.albumRepository = albumRepository;
-        this.userRepository = userRepository;
-        this.modelMapper = modelMapper;
-    }
+    private ModelMapper modelMapper;
 
     @Override
     public PagedResponse<AlbumResponse> getAllAlbums(int page, int size) {

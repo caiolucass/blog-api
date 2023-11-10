@@ -12,7 +12,5 @@ import java.util.UUID;
 public interface PostRepository extends JpaRepository<Post, Long> {
     Page<Post> findByCreatedBy(Long userId, Pageable pageable);
 
-    Page<Post> findByCategory(Long categoryId, Pageable pageable);
-
     Long countByCreatedBy(Long userId);
 }

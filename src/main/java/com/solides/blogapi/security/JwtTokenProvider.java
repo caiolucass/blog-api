@@ -1,43 +1,40 @@
 package com.solides.blogapi.security;
 
 import io.jsonwebtoken.*;
-import org.springframework.security.core.Authentication;
+import io.jsonwebtoken.io.Decoders;
+import io.jsonwebtoken.security.Keys;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
+import org.springframework.security.core.Authentication;
+import org.springframework.stereotype.Service;
 
+import java.security.Key;
 import java.util.Date;
 
-@Component
+@Service
 public class JwtTokenProvider {
-
     private static final Logger LOGGER = LoggerFactory.getLogger(JwtTokenProvider.class);
-
-    @Value(value = "${app.jwtSecret}")
-    private String jwtSecret;
-
-    @Value(value = "${app.jwtExpirationInMs}")
-    private int jwtExpirationInMs;
+    private static final String SECRET_KEY = "46294A404E635266556A586E3272357538782F4125442A472D4B615064536756";
 
     public String generateToken(Authentication authentication) {
         UserPrincipal userPrincipal = (UserPrincipal) authentication.getPrincipal();
 
-        Date now = new Date();
-        Date expiryDate = new Date(now.getTime() + jwtExpirationInMs);
-
         return Jwts.builder()
                 .setSubject(Long.toString(userPrincipal.getId()))
                 .setIssuedAt(new Date())
-                .setExpiration(expiryDate)
-                .signWith(SignatureAlgorithm.HS512, jwtSecret)
+                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 24))
+                .signWith(getSigningKey(), SignatureAlgorithm.ES256)
                 .compact();
     }
 
+    private Key getSigningKey() {
+        byte[] keyBytes = Decoders.BASE64.decode(SECRET_KEY);
+        return Keys.hmacShaKeyFor(keyBytes);
+    }
 
     public Long getUserIdFromJWT(String token) {
-        Claims claims = Jwts.parser()
-                .setSigningKey(jwtSecret)
+        Claims claims = Jwts.parserBuilder().build()
+                .setSigningKey(SECRET_KEY)
                 .parseClaimsJws(token)
                 .getBody();
 
@@ -46,16 +43,16 @@ public class JwtTokenProvider {
 
     public boolean validateToken(String authToken) {
         try {
-            Jwts.parser().setSigningKey(jwtSecret).parseClaimsJws(authToken);
+            Jwts.parserBuilder().setSigningKey(SECRET_KEY).build().parseClaimsJws(authToken).getBody();
             return true;
         } catch (MalformedJwtException ex) {
-            LOGGER.error("Token JWT invalido.");
+            LOGGER.error("JWT token inválido.");
         } catch (ExpiredJwtException ex) {
-            LOGGER.error("Token JWT expirado");
+            LOGGER.error("JWT token expirado.");
         } catch (UnsupportedJwtException ex) {
-            LOGGER.error("Token JWT não suportado");
+            LOGGER.error("JWT token não suportado.");
         } catch (IllegalArgumentException ex) {
-            LOGGER.error("JWT claims vazio");
+            LOGGER.error("JWT claims string is empty");
         }
         return false;
     }
