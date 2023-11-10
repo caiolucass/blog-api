@@ -6,14 +6,13 @@
 
 ## Tecnologias utilizadas:
 
-- [Spring Boot](https://spring.io/) - [Postgres](https://www.postgresql.org/) - [Spring Security](https://spring.io/projects/spring-security) - [JSONWebToken](https://jwt.io/)
-- [JPA](https://spring.io/projects/spring-data-jpa) - [MAVEN](https://maven.apache.org/)
+- [Spring Boot](https://spring.io/) - [Postgres](https://www.postgresql.org/) - [Spring Security](https://spring.io/projects/spring-security) - [JSONWebToken](https://jwt.io/) - [JPA](https://spring.io/projects/spring-data-jpa) -[MAVEN](https://maven.apache.org/)
 
 ## Endpoints da aplicação:
 
 ### Autenticação e autorização
 
-> `POST: http://localhost:8080/api/auth/signUp`
+> `POST: http://localhost:8080/api/auth/signUp` 
 
 ```json
 {
