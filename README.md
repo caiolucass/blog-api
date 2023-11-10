@@ -1,12 +1,6 @@
 # 💻blog-api
 
-🔨 Tecnologias
-
-Esse projeto foi desenvolvido com as seguintes tecnologias:
-
-> Spring Boot, Postgres, Spring Security, JWT, JPA, Rest API
-
-## Instruções para o uso da API
+## Clonar a aplicação
 
 ### Auth
 
@@ -30,5 +24,20 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 }
 
 ```
+### Usuários
 
-> DELETE: http://localhost:8080/pessoas/{id} -> Deleta uma pessoa. Necessario informar o {id} da pessoa!
+> GET: http://localhost:8080/api/users/me
+> GET: http://localhost:8080/api/users/{username}/profile
+> GET: http://localhost:8080/api/users/{username}/posts
+> GET: http://localhost:8080/api/users/{username}/albums
+> GET: http://localhost:8080/api/users/{username}/albums
+> GET: http://localhost:8080/api/users/checkUsernameAvailability
+> GET: http://localhost:8080/api/users/checkEmailAvailability
+> POST: http://localhost:8080/api/users
+> POST: http://localhost:8080/api/users/{username}
+> DELETE: http://localhost:8080/api/users/{username}
+> PUT: http://localhost:8080/api/users/{username}/giveAdmin
+> PUT: http://localhost:8080/api/users/{username}/TakeAdmin
+> PUT: http://localhost:8080/api/users/setOrUpdateInfo
+
+
