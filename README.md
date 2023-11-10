@@ -10,7 +10,17 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ### Auth
 
-> POST: http://localhost:8080/api/auth/signUp -> Cadastra nova pessoa e seu(s) endereco(s)
+> POST: http://localhost:8080/api/auth/signUp
+
+```json
+{
+	"username": "caio98",
+	"password": "password",
+	"email": "caio@gmail.com"
+}
+
+```
+> POST: http://localhost:8080/api/auth/signIn
 
 ```json
 {
