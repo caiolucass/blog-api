@@ -2,7 +2,7 @@
 
 1. Clonar a aplicação:
 
-git clone https://github.com/caiolucass/blog-api
+> git clone https://github.com/caiolucass/blog-api
 
 ### Auth
 
