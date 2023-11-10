@@ -2,7 +2,9 @@
 
 1. Clonar a aplicação
 
- • git clone https://github.com/caiolucass/blog-api
+ • Pessoa:
+      ◦ Nome
+      ◦ Data de nascimento
 
 ### Auth
 
