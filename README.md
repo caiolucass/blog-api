@@ -2,9 +2,10 @@
 
 1. Clonar a aplicação
 
- • Pessoa:
-      ◦ Nome
-      ◦ Data de nascimento
+```json
+git clone https://github.com/caiolucass/blog-api
+```
+ 
 
 ### Auth
 
