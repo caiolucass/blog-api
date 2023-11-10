@@ -1,4 +1,4 @@
-# 💻blog-api
+<h1 align="center">Blog API</h1>
 
 1. Clonar a aplicação:
 
