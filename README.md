@@ -4,7 +4,7 @@
 
 `git clone https://github.com/caiolucass/blog-api`
 
-### Esse projeto foi desenvolvido com as seguintes tecnologias:
+### 🔨 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - [Spring Boot](https://spring.io/)
 - [Postgres](https://www.postgresql.org/)
@@ -13,7 +13,7 @@
 - [JPA](https://spring.io/projects/spring-data-jpa)
 - [MAVEN](https://maven.apache.org/)
 
-### Endpoints da aplicação:
+## Endpoints da aplicação:
 
 ### Autenticação e autorização
 
