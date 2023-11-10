@@ -4,6 +4,15 @@
 
 `git clone https://github.com/caiolucass/blog-api`
 
+### Esse projeto foi desenvolvido com as seguintes tecnologias:
+
+- [Spring Boot]([https://nodejs.org/en/](https://spring.io/))
+- [Postgres]([https://www.typescriptlang.org/](https://www.postgresql.org/))
+- [Spring Security]([https://expressjs.com/pt-br/](https://spring.io/projects/spring-security))
+- [JSONWebToken](https://jwt.io/)
+- [JPA](https://spring.io/projects/spring-data-jpa)
+- [MAVEN](https://maven.apache.org/)
+
 ### Auth
 
 > `POST: http://localhost:8080/api/auth/signUp`
