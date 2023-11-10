@@ -4,7 +4,7 @@
 
 `git clone https://github.com/caiolucass/blog-api`
 
-### 🔨 Esse projeto foi desenvolvido com as seguintes tecnologias:
+2. Tecnologias utilizadas:
 
 - [Spring Boot](https://spring.io/)
 - [Postgres](https://www.postgresql.org/)
