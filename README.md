@@ -13,6 +13,8 @@
 - [JPA](https://spring.io/projects/spring-data-jpa)
 - [MAVEN](https://maven.apache.org/)
 
+### Abaixo é listado todos os endpoints desta aplicação
+
 ### Auth
 
 > `POST: http://localhost:8080/api/auth/signUp`
