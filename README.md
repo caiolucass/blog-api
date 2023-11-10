@@ -13,7 +13,7 @@
 - [JPA](https://spring.io/projects/spring-data-jpa)
 - [MAVEN](https://maven.apache.org/)
 
-### Abaixo é listado todos os endpoints desta aplicação
+### Endpoints da aplicação:
 
 ### Auth
 
