@@ -6,7 +6,7 @@
 
 ### Auth
 
-> POST: http://localhost:8080/api/auth/signUp
+> `POST: http://localhost:8080/api/auth/signUp`
 
 ```json
 {
@@ -16,7 +16,7 @@
 }
 
 ```
-> POST: http://localhost:8080/api/auth/signIn
+> `POST: http://localhost:8080/api/auth/signIn`
 
 ```json
 {
@@ -28,28 +28,28 @@
 ```
 ### Usuários
 
-> GET: http://localhost:8080/api/users/me
+> GET: `http://localhost:8080/api/users/me`
 
-> GET: http://localhost:8080/api/users/{username}/profile
+> GET: `http://localhost:8080/api/users/{username}/profile`
 
-> GET: http://localhost:8080/api/users/{username}/posts
+> GET: `http://localhost:8080/api/users/{username}/posts`
 
-> GET: http://localhost:8080/api/users/{username}/albums
+> GET: `http://localhost:8080/api/users/{username}/albums`
 
-> GET: http://localhost:8080/api/users/checkUsernameAvailability
+> GET: `http://localhost:8080/api/users/checkUsernameAvailability`
 
-> GET: http://localhost:8080/api/users/checkEmailAvailability
+> GET: `http://localhost:8080/api/users/checkEmailAvailability`
 
-> POST: http://localhost:8080/api/users
+> POST: `http://localhost:8080/api/users`
 
-> POST: http://localhost:8080/api/users/{username}
+> POST: `http://localhost:8080/api/users/{username}`
 
-> DELETE: http://localhost:8080/api/users/{username}
+> DELETE: `http://localhost:8080/api/users/{username}`
 
-> PUT: http://localhost:8080/api/users/{username}/giveAdmin
+> PUT: `http://localhost:8080/api/users/{username}/giveAdmin`
 
-> PUT: http://localhost:8080/api/users/{username}/TakeAdmin
+> PUT: `http://localhost:8080/api/users/{username}/TakeAdmin`
 
-> PUT: http://localhost:8080/api/users/setOrUpdateInfo
+> PUT: `http://localhost:8080/api/users/setOrUpdateInfo`
 
 
