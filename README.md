@@ -15,7 +15,7 @@
 
 ### Endpoints da aplicação:
 
-### Auth
+### Autenticação e autorização
 
 > `POST: http://localhost:8080/api/auth/signUp`
 
