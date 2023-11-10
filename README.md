@@ -1,10 +1,10 @@
 <h1 align="center">Blog API</h1>
 
-1. Clonar a aplicação:
+## Clonar a aplicação:
 
 `git clone https://github.com/caiolucass/blog-api`
 
-2. Tecnologias utilizadas:
+## Tecnologias utilizadas:
 
 - [Spring Boot](https://spring.io/)
 - [Postgres](https://www.postgresql.org/)
