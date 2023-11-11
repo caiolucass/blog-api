@@ -15,6 +15,7 @@ import com.solides.blogapi.security.UserPrincipal;
 import com.solides.blogapi.service.PhotoService;
 import com.solides.blogapi.utils.AppConstants;
 import com.solides.blogapi.utils.AppUtils;
+import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -29,16 +30,12 @@ import java.util.List;
 import static com.solides.blogapi.utils.AppConstants.*;
 
 @Service
+@RequiredArgsConstructor
 public class PhotoServiceImpl implements PhotoService {
 
     private final PhotoRepository photoRepository;
 
     private final AlbumRepository albumRepository;
-
-    public PhotoServiceImpl(PhotoRepository photoRepository, AlbumRepository albumRepository) {
-        this.photoRepository = photoRepository;
-        this.albumRepository = albumRepository;
-    }
 
     @Override
     public PagedResponse<PhotoResponse> getAllPhotos(int page, int size) {
@@ -101,8 +98,7 @@ public class PhotoServiceImpl implements PhotoService {
                     newPhoto.getThumbnailUrl(), newPhoto.getAlbum().getId());
         }
 
-        ApiResponse apiResponse = new ApiResponse(Boolean.FALSE, "You don't have permission to add photo in this album");
-
+        ApiResponse apiResponse = new ApiResponse(Boolean.FALSE, "Você nao te permissao para adicionar essa foto neste album");
         throw new UnauthorizedException(apiResponse);
     }
 
@@ -112,10 +108,10 @@ public class PhotoServiceImpl implements PhotoService {
         if (photo.getAlbum().getUser().getId().equals(currentUser.getId())
                 || currentUser.getAuthorities().contains(new SimpleGrantedAuthority(RoleName.ROLE_ADMIN.toString()))) {
             photoRepository.deleteById(id);
-            return new ApiResponse(Boolean.TRUE, "Photo deleted successfully");
+            return new ApiResponse(Boolean.TRUE, "Foto deletada com sucesso.");
         }
 
-        ApiResponse apiResponse = new ApiResponse(Boolean.FALSE, "You don't have permission to delete this photo");
+        ApiResponse apiResponse = new ApiResponse(Boolean.FALSE, "Você nao te permissao para deletar essa foto");
 
         throw new UnauthorizedException(apiResponse);
     }

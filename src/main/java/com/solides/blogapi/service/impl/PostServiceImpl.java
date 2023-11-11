@@ -15,6 +15,7 @@ import com.solides.blogapi.repository.UserRepository;
 import com.solides.blogapi.security.UserPrincipal;
 import com.solides.blogapi.service.PostService;
 import com.solides.blogapi.utils.AppConstants;
+import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -28,16 +29,12 @@ import java.util.List;
 import static com.solides.blogapi.utils.AppConstants.*;
 
 @Service
+@RequiredArgsConstructor
 public class PostServiceImpl implements PostService {
 
     private final PostRepository postRepository;
 
     private final UserRepository userRepository;
-
-    public PostServiceImpl(PostRepository postRepository, UserRepository userRepository) {
-        this.postRepository = postRepository;
-        this.userRepository = userRepository;
-    }
 
     @Override
     public PagedResponse<Post> getAllPosts(int page, int size) {
@@ -76,7 +73,7 @@ public class PostServiceImpl implements PostService {
             post.setBody(newPostRequest.getBody());
             return postRepository.save(post);
         }
-        ApiResponse apiResponse = new ApiResponse(Boolean.FALSE, "Voce nao tem permissao para editar esse post.");
+        ApiResponse apiResponse = new ApiResponse(Boolean.FALSE, SEM_PERMISSAO_PARA_ESSA_OPERACAO);
 
         throw new UnauthorizedException(apiResponse);
     }
@@ -90,7 +87,7 @@ public class PostServiceImpl implements PostService {
             return new ApiResponse(Boolean.TRUE, "Post deletado com sucesso.");
         }
 
-        ApiResponse apiResponse = new ApiResponse(Boolean.FALSE, "Voce nao tem permissao para deletar esse post.");
+        ApiResponse apiResponse = new ApiResponse(Boolean.FALSE, SEM_PERMISSAO_PARA_ESSA_OPERACAO);
 
         throw new UnauthorizedException(apiResponse);
     }

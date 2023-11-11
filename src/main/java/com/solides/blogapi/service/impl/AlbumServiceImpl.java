@@ -29,22 +29,17 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import static com.solides.blogapi.utils.AppConstants.ID;
+import static com.solides.blogapi.utils.AppConstants.*;
 
 @Service
 @RequiredArgsConstructor
 public class AlbumServiceImpl implements AlbumService {
     private static final String CREATED_AT = "createdAt";
-
-    private static final String ALBUM_STR = "Album";
-
-    private static final String SEM_PERMISSAO_PARA_ESSA_OPERACAO = "Voce nao tem permissao para esse tipo de operacao";
-
     private final AlbumRepository albumRepository;
 
     private final UserRepository userRepository;
 
-    private ModelMapper modelMapper;
+    private final ModelMapper modelMapper;
 
     @Override
     public PagedResponse<AlbumResponse> getAllAlbums(int page, int size) {
@@ -80,13 +75,13 @@ public class AlbumServiceImpl implements AlbumService {
 
     @Override
     public ResponseEntity<Album> getAlbum(Long id) {
-        Album album = albumRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException(ALBUM_STR, ID, id));
+        Album album = albumRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException(ALBUM, ID, id));
         return new ResponseEntity<>(album, HttpStatus.OK);
     }
 
     @Override
     public ResponseEntity<AlbumResponse> updateAlbum(Long id, AlbumRequest newAlbum, UserPrincipal currentUser) {
-        Album album = albumRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException(ALBUM_STR, ID, id));
+        Album album = albumRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException(ALBUM, ID, id));
         User user = userRepository.getUser(currentUser);
         if (album.getUser().getId().equals(user.getId()) || currentUser.getAuthorities()
                 .contains(new SimpleGrantedAuthority(RoleName.ROLE_ADMIN.toString()))) {
@@ -105,7 +100,7 @@ public class AlbumServiceImpl implements AlbumService {
 
     @Override
     public ResponseEntity<ApiResponse> deleteAlbum(Long id, UserPrincipal currentUser) {
-        Album album = albumRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException(ALBUM_STR, ID, id));
+        Album album = albumRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException(ALBUM, ID, id));
         User user = userRepository.getUser(currentUser);
         if (album.getUser().getId().equals(user.getId()) || currentUser.getAuthorities()
                 .contains(new SimpleGrantedAuthority(RoleName.ROLE_ADMIN.toString()))) {
