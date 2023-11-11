@@ -2,9 +2,9 @@ package com.solides.blogapi.service;
 
 import com.solides.blogapi.model.Album;
 import com.solides.blogapi.payload.request.AlbumRequest;
+import com.solides.blogapi.payload.response.PagedResponse;
 import com.solides.blogapi.payload.response.AlbumResponse;
 import com.solides.blogapi.payload.response.ApiResponse;
-import com.solides.blogapi.payload.response.PagedResponse;
 import com.solides.blogapi.security.UserPrincipal;
 import org.springframework.http.ResponseEntity;
 

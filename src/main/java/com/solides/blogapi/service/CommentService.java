@@ -2,8 +2,8 @@ package com.solides.blogapi.service;
 
 import com.solides.blogapi.model.Comment;
 import com.solides.blogapi.payload.request.CommentRequest;
-import com.solides.blogapi.payload.response.ApiResponse;
 import com.solides.blogapi.payload.response.PagedResponse;
+import com.solides.blogapi.payload.response.ApiResponse;
 import com.solides.blogapi.security.UserPrincipal;
 
 public interface CommentService {

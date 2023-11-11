@@ -1,9 +1,9 @@
 package com.solides.blogapi.controller;
 
 import com.solides.blogapi.model.Post;
+import com.solides.blogapi.payload.response.PagedResponse;
 import com.solides.blogapi.payload.request.PostRequest;
 import com.solides.blogapi.payload.response.ApiResponse;
-import com.solides.blogapi.payload.response.PagedResponse;
 import com.solides.blogapi.payload.response.PostResponse;
 import com.solides.blogapi.security.CurrentUser;
 import com.solides.blogapi.security.UserPrincipal;

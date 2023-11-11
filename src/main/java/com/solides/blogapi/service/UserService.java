@@ -4,10 +4,8 @@ import com.solides.blogapi.model.User;
 import com.solides.blogapi.payload.UserIdentityAvailability;
 import com.solides.blogapi.payload.UserProfile;
 import com.solides.blogapi.payload.UserSummary;
-import com.solides.blogapi.payload.request.InfoRequest;
 import com.solides.blogapi.payload.response.ApiResponse;
 import com.solides.blogapi.security.UserPrincipal;
-import jakarta.validation.Valid;
 
 public interface UserService {
 
@@ -29,6 +27,6 @@ public interface UserService {
 
         ApiResponse removeAdmin(String username);
 
-        UserProfile setOrUpdateInfo(UserPrincipal currentUser, InfoRequest infoRequest);
+        UserProfile setOrUpdateInfo(UserPrincipal currentUser);
 
 }

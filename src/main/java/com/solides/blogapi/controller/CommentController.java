@@ -2,27 +2,25 @@ package com.solides.blogapi.controller;
 
 import com.solides.blogapi.model.Comment;
 import com.solides.blogapi.payload.request.CommentRequest;
-import com.solides.blogapi.payload.response.ApiResponse;
 import com.solides.blogapi.payload.response.PagedResponse;
+import com.solides.blogapi.payload.response.ApiResponse;
 import com.solides.blogapi.security.CurrentUser;
 import com.solides.blogapi.security.UserPrincipal;
 import com.solides.blogapi.service.CommentService;
 import com.solides.blogapi.utils.AppConstants;
 import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/api/posts/{postId}/comments")
 public class CommentController {
 
     private final CommentService commentService;
-
-    public CommentController(CommentService commentService) {
-        this.commentService = commentService;
-    }
 
     @GetMapping
     public ResponseEntity<PagedResponse<Comment>> getAllComments(@PathVariable(name = "postId") Long postId,

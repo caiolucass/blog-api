@@ -7,7 +7,6 @@ import com.solides.blogapi.model.role.RoleName;
 import com.solides.blogapi.payload.UserIdentityAvailability;
 import com.solides.blogapi.payload.UserProfile;
 import com.solides.blogapi.payload.UserSummary;
-import com.solides.blogapi.payload.request.InfoRequest;
 import com.solides.blogapi.payload.response.ApiResponse;
 import com.solides.blogapi.repository.PostRepository;
 import com.solides.blogapi.repository.RoleRepository;
@@ -137,7 +136,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserProfile setOrUpdateInfo(UserPrincipal currentUser, InfoRequest infoRequest) {
+    public UserProfile setOrUpdateInfo(UserPrincipal currentUser) {
         User user = userRepository.findByUsername(currentUser.getUsername())
                 .orElseThrow(() -> new ResourceNotFoundException("Usuario", "username", currentUser.getUsername()));
 

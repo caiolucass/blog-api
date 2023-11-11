@@ -1,8 +1,8 @@
 package com.solides.blogapi.controller;
 
+import com.solides.blogapi.payload.response.PagedResponse;
 import com.solides.blogapi.payload.request.PhotoRequest;
 import com.solides.blogapi.payload.response.ApiResponse;
-import com.solides.blogapi.payload.response.PagedResponse;
 import com.solides.blogapi.payload.response.PhotoResponse;
 import com.solides.blogapi.security.CurrentUser;
 import com.solides.blogapi.security.UserPrincipal;

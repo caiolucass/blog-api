@@ -6,9 +6,8 @@ import com.solides.blogapi.model.User;
 import com.solides.blogapi.payload.UserIdentityAvailability;
 import com.solides.blogapi.payload.UserProfile;
 import com.solides.blogapi.payload.UserSummary;
-import com.solides.blogapi.payload.request.InfoRequest;
-import com.solides.blogapi.payload.response.ApiResponse;
 import com.solides.blogapi.payload.response.PagedResponse;
+import com.solides.blogapi.payload.response.ApiResponse;
 import com.solides.blogapi.security.CurrentUser;
 import com.solides.blogapi.security.UserPrincipal;
 import com.solides.blogapi.service.AlbumService;
@@ -126,9 +125,8 @@ public class UserController {
 
     @PutMapping("/setOrUpdateInfo")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public ResponseEntity<UserProfile> setAddress(@CurrentUser UserPrincipal currentUser,
-                                                  @Valid @RequestBody InfoRequest infoRequest) {
-        UserProfile userProfile = userService.setOrUpdateInfo(currentUser, infoRequest);
+    public ResponseEntity<UserProfile> setAddress(@CurrentUser UserPrincipal currentUser) {
+        UserProfile userProfile = userService.setOrUpdateInfo(currentUser);
         return new ResponseEntity< >(userProfile, HttpStatus.OK);
     }
 }
