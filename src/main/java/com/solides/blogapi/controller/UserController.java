@@ -45,20 +45,20 @@ public class UserController {
         return new ResponseEntity< >(userSummary, HttpStatus.OK);
     }
 
-    @GetMapping("/checarDisponilidadeUserName")
+    @GetMapping("/checkUsernameAvailability")
     public ResponseEntity<UserIdentityAvailability> checkUsernameAvailability(@RequestParam(value = "username") String username) {
         UserIdentityAvailability userIdentityAvailability = userService.checkUsernameAvailability(username);
 
         return new ResponseEntity< >(userIdentityAvailability, HttpStatus.OK);
     }
 
-    @GetMapping("/checarDisponilidadeEmail")
+    @GetMapping("/checkEmailAvailability")
     public ResponseEntity<UserIdentityAvailability> checkEmailAvailability(@RequestParam(value = "email") String email) {
         UserIdentityAvailability userIdentityAvailability = userService.checkEmailAvailability(email);
         return new ResponseEntity< >(userIdentityAvailability, HttpStatus.OK);
     }
 
-    @GetMapping("/{username}/perfil")
+    @GetMapping("/{username}/profile")
     public ResponseEntity<UserProfile> getUSerProfile(@PathVariable(value = "username") String username) {
         UserProfile userProfile = userService.getUserProfile(username);
         return new ResponseEntity< >(userProfile, HttpStatus.OK);
@@ -108,7 +108,7 @@ public class UserController {
         return new ResponseEntity< >(apiResponse, HttpStatus.OK);
     }
 
-    @PutMapping("/{username}/addAdmin")
+    @PutMapping("/{username}/giveAdmin")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<ApiResponse> giveAdmin(@PathVariable(name = "username") String username) {
         ApiResponse apiResponse = userService.giveAdmin(username);
@@ -116,7 +116,7 @@ public class UserController {
         return new ResponseEntity< >(apiResponse, HttpStatus.OK);
     }
 
-    @PutMapping("/{username}/removeAdmin")
+    @PutMapping("/{username}/takeAdmin")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<ApiResponse> takeAdmin(@PathVariable(name = "username") String username) {
         ApiResponse apiResponse = userService.removeAdmin(username);

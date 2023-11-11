@@ -36,7 +36,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @RequestMapping("/api/auth")
 public class AuthController {
-    private static final String USER_ROLE_NOT_SET = "User role not set";
+    private static final String USER_ROLE_NOT_SET = "Usuário nao setado.";
 
     private final UserRepository userRepository;
 
@@ -62,7 +62,7 @@ public class AuthController {
     @PostMapping("/signUp")
     public ResponseEntity<ApiResponse> registerUser(@Valid @RequestBody SignUpRequest signUpRequest) {
         if (Boolean.TRUE.equals(userRepository.existsByUsername(signUpRequest.getUsername()))) {
-            throw new BlogApiException(HttpStatus.BAD_REQUEST, "UserName já cadastrado.");
+            throw new BlogApiException(HttpStatus.BAD_REQUEST, "Username já cadastrado.");
         }
 
         if (Boolean.TRUE.equals(userRepository.existsByEmail(signUpRequest.getEmail()))) {
