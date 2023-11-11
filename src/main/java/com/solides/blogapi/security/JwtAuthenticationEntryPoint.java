@@ -18,6 +18,6 @@ public class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint {
     public void commence(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, AuthenticationException e)
             throws IOException {
         LOGGER.error("Respondendo com erro não autorizado. Menssagem - {}", e.getMessage());
-        httpServletResponse.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Desculpe, Voce nao esta autorizado a acessar esse recurso.");
+        httpServletResponse.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Desculpe, voce nao esta autorizado a acessar esse recurso.");
     }
 }
