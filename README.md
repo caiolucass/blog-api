@@ -109,7 +109,7 @@
 
 > GET: `http://localhost:8080/api/albums/{id}/photos`
 
-### PHOTOS
+### Photos
 
 > GET: `http://localhost:8080/api/photos`
 
