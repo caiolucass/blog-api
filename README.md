@@ -58,4 +58,26 @@
 
 > PUT: `http://localhost:8080/api/users/setOrUpdateInfo`
 
+### Post
 
+> GET: `http://localhost:8080/api/posts`
+
+> GET: `http://localhost:8080/api/posts/{id}`
+
+> POST: `http://localhost:8080/api/posts`
+
+> PUT: `http://localhost:8080/api/posts/{id}`
+
+> DELTE: `http://localhost:8080/api/posts/{id}`
+
+### Comments
+
+> GET: `http://localhost:8080/api/posts/{postId}/comments`
+
+> GET: `http://localhost:8080/api/posts/{postId}/comments/{id}`
+
+> POST: `http://localhost:8080/api/posts/{postId}/comments`
+
+> PUT: `http://localhost:8080/api/posts/{postId}/comments/{id}`
+
+> DELETE: `http://localhost:8080/api/posts/{postId}/comments/{id}`
