@@ -34,6 +34,127 @@
 
 ```
 
+> `POST: http://localhost:8080/api/users` 
+
+```json
+{
+	"username": "caio98",
+	"password": "password",
+	"email": "caio@gmail.com"
+}
+
+```
+
+> `UPDATE: http://localhost:8080/api/users/{username}` 
+
+```json
+{
+	"username": "caio98",
+	"password": "password",
+	"email": "caio@gmail.com"
+}
+
+```
+
+> `POST: http://localhost:8080/api/posts` 
+
+```json
+{
+	"title": "sunt aut facere ",
+	"body": "quia et suscipit "
+}
+
+```
+
+> `UPDATE: http://localhost:8080/api/posts/{id}` 
+
+```json
+{
+	"title": "UPDATED",
+	"body": "UPDATED"
+}
+
+```
+
+> `POST: http://localhost:8080/api/posts/{id}` 
+
+```json
+{
+	"title": "UPDATED",
+	"body": "UPDATED"
+}
+
+```
+
+> `POST: http://localhost:8080/api/posts/{postId}/comments` 
+
+```json
+{
+	"body": "laudantium"
+}
+
+```
+
+> `UPDATE: http://localhost:8080/api/posts/{postId}/comments/{id}` 
+
+```json
+{
+	"body": "laudantium"
+}
+
+```
+
+> `POST: http://localhost:8080/api/albums` 
+
+```json
+{
+	"title": "quidem enim"
+}
+
+```
+
+> `UPDATE: http://localhost:8080/api/albums` 
+
+```json
+{
+	"title": "quidem UPDATED"
+}
+
+```
+
+> `UPDATE: http://localhost:8080/api/albums/{id}` 
+
+```json
+{
+	"title": "quidem UPDATED"
+}
+
+```
+
+> `POST: http://localhost:8080/api/photos` 
+
+```json
+{
+	"title": " unt",
+	"url": "https://via.placeholder.com/600/92c952",
+	"thumbnailUrl": "https://via.placeholder.com/150/92c952",
+	"albumId": 1
+}
+
+```
+
+> `UPDATE: http://localhost:8080/api/photos` 
+
+```json
+{
+	"title": " unt accusamus ",
+	"url": "https://via.placeholder.com/600/771796",
+	"thumbnailUrl": "https://via.placeholder.com/150/771796",
+	"albumId": 1
+}
+
+```
+
 ## Endpoints da aplicação:
 
 ### Usuários
@@ -59,8 +180,6 @@
 > PUT: `http://localhost:8080/api/users/{username}/giveAdmin`
 
 > PUT: `http://localhost:8080/api/users/{username}/TakeAdmin`
-
-> PUT: `http://localhost:8080/api/users/setOrUpdateInfo`
 
 ### Post
 
