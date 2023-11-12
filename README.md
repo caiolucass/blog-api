@@ -34,15 +34,6 @@
 
 ```
 
-```json
-{
-	"username": "caio98",
-	"password": "password",
-	"email": "caio@gmail.com"
-}
-
-```
-
 ## Endpoints da aplicação:
 
 ### Usuários
