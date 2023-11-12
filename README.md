@@ -8,7 +8,7 @@
 
 - [Spring Boot](https://spring.io/) - [Postgres](https://www.postgresql.org/) - [Spring Security](https://spring.io/projects/spring-security) - [JSONWebToken](https://jwt.io/) - [JPA](https://spring.io/projects/spring-data-jpa) - [MAVEN](https://maven.apache.org/)
 
-- Para rodar o projeto é necessário utilizar os postgres e utilizar as credencias do arquivo `application.yml`
+- Para rodar o projeto é necessário utilizar os postgres e utilizar as credenciais do arquivo `application.yml`
 
 ## Json requests:
 
