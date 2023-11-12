@@ -8,9 +8,7 @@
 
 - [Spring Boot](https://spring.io/) - [Postgres](https://www.postgresql.org/) - [Spring Security](https://spring.io/projects/spring-security) - [JSONWebToken](https://jwt.io/) - [JPA](https://spring.io/projects/spring-data-jpa) - [MAVEN](https://maven.apache.org/)
 
-## Endpoints da aplicação:
-
-### Autenticação e autorização
+## Json Requests:
 
 > `POST: http://localhost:8080/api/auth/signIn`
 
@@ -33,6 +31,17 @@
 }
 
 ```
+
+```json
+{
+	"username": "caio98",
+	"password": "password",
+	"email": "caio@gmail.com"
+}
+
+```
+
+## Endpoints da aplicação:
 
 ### Usuários
 
@@ -83,3 +92,32 @@
 > PUT: `http://localhost:8080/api/posts/{postId}/comments/{id}`
 
 > DELETE: `http://localhost:8080/api/posts/{postId}/comments/{id}`
+
+### Albuns
+
+> GET: `http://localhost:8080/api/albums`
+
+> GET: `http://localhost:8080/api/albums/{id}`
+
+> POST: `http://localhost:8080/api/albums}`
+
+> PUT: `http://localhost:8080/api/albums/{id}`
+
+> DELETE: `http://localhost:8080/api/albums/{id}`
+
+> GET: `http://localhost:8080/api/albums/{id}/photos`
+
+### PHOTOS
+
+> GET: `http://localhost:8080/api/photos`
+
+> GET: `http://localhost:8080/api/photos/{id}`
+
+> POST: `http://localhost:8080/api/photos`
+
+> PUT: `http://localhost:8080/api/photos/{id}`
+
+> DELETE: `http://localhost:8080/api/photos/{id}`
+
+Para testar so endpoints, é necessario utilizar o [Postman](https://www.postman.com/) ou o [Insomnia](https://insomnia.rest/download)
+
