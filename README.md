@@ -12,16 +12,6 @@
 
 ### Autenticação e autorização
 
-> `POST: http://localhost:8080/api/auth/signUp` 
-
-```json
-{
-	"username": "caio98",
-	"password": "password",
-	"email": "caio@gmail.com"
-}
-
-```
 > `POST: http://localhost:8080/api/auth/signIn`
 
 ```json
@@ -32,6 +22,18 @@
 }
 
 ```
+
+> `POST: http://localhost:8080/api/auth/signUp` 
+
+```json
+{
+	"username": "caio98",
+	"password": "password",
+	"email": "caio@gmail.com"
+}
+
+```
+
 ### Usuários
 
 > GET: `http://localhost:8080/api/users/me`
