@@ -21,6 +21,8 @@ public class AppConstants {
 
     public static final String POST = "Post";
 
+    public static final String USER_ROLE_NOT_SET = "Usuário nao setado.";
+
     public static final String SEM_PERMISSAO_PARA_ESSA_OPERACAO = "Voce nao tem permissao para esse tipo de operacao";
 
     public static final String COMENTARIO_NAO_PERTENCE_AO_POST = "Esse comentario nao pertece a esse post.";

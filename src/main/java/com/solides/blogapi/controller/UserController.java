@@ -122,11 +122,4 @@ public class UserController {
 
         return new ResponseEntity< >(apiResponse, HttpStatus.OK);
     }
-
-    @PutMapping("/setOrUpdateInfo")
-    @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public ResponseEntity<UserProfile> setAddress(@CurrentUser UserPrincipal currentUser) {
-        UserProfile userProfile = userService.setOrUpdateInfo(currentUser);
-        return new ResponseEntity< >(userProfile, HttpStatus.OK);
-    }
 }

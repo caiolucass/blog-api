@@ -6,8 +6,8 @@ import org.hibernate.Hibernate;
 import org.hibernate.annotations.NaturalId;
 
 import java.util.Objects;
-import java.util.UUID;
 
+@Builder
 @Entity
 @Getter
 @Setter

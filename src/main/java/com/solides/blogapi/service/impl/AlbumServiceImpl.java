@@ -39,7 +39,7 @@ public class AlbumServiceImpl implements AlbumService {
 
     private final UserRepository userRepository;
 
-    private final ModelMapper modelMapper;
+    private ModelMapper modelMapper;
 
     @Override
     public PagedResponse<AlbumResponse> getAllAlbums(int page, int size) {

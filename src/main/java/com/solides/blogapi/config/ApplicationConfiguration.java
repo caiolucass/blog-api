@@ -1,4 +1,4 @@
-package com.solides.blogapi.security;
+package com.solides.blogapi.config;
 
 import com.solides.blogapi.repository.UserRepository;
 import lombok.RequiredArgsConstructor;

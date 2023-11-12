@@ -20,6 +20,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -31,12 +32,12 @@ import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.solides.blogapi.utils.AppConstants.USER_ROLE_NOT_SET;
+
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/auth")
 public class AuthController {
-    private static final String USER_ROLE_NOT_SET = "Usuário nao setado.";
-
     private final UserRepository userRepository;
 
     private final RoleRepository roleRepository;
@@ -89,9 +90,7 @@ public class AuthController {
         }
 
         user.setRoles(roles);
-
         User result = userRepository.save(user);
-
         URI location = ServletUriComponentsBuilder.fromCurrentContextPath().path("/api/users/{userId}")
                 .buildAndExpand(result.getId()).toUri();
 

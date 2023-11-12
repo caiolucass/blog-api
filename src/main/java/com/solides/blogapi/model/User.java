@@ -15,6 +15,7 @@ import java.io.Serial;
 import java.util.List;
 import java.util.Objects;
 
+@Builder
 @Entity
 @Getter
 @Setter
