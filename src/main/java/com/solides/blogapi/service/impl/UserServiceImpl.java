@@ -134,23 +134,4 @@ public class UserServiceImpl implements UserService {
         userRepository.save(user);
         return new ApiResponse(Boolean.TRUE, "Você removeu a permissão de ADMIN para o usuario: " + username);
     }
-
-    @Override
-    public UserProfile setOrUpdateInfo(UserPrincipal currentUser) {
-        User user = userRepository.findByUsername(currentUser.getUsername())
-                .orElseThrow(() -> new ResourceNotFoundException("Usuario", "username", currentUser.getUsername()));
-
-        if (user.getId().equals(currentUser.getId())
-                || currentUser.getAuthorities().contains(new SimpleGrantedAuthority(RoleName.ROLE_ADMIN.toString()))) {
-            User updatedUser = userRepository.save(user);
-
-            Long postCount = postRepository.countByCreatedBy(updatedUser.getId());
-
-            return new UserProfile(updatedUser.getId(), updatedUser.getUsername(), updatedUser.getCreatedAt(),
-                    updatedUser.getEmail(), postCount);
-        }
-
-        ApiResponse apiResponse = new ApiResponse(Boolean.FALSE, "Você nao tem permissão para atualizar o perfil dos usuarios.", HttpStatus.FORBIDDEN);
-        throw new AccessDeniedException(apiResponse);
-    }
 }

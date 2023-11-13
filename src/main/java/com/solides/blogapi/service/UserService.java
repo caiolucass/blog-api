@@ -27,6 +27,4 @@ public interface UserService {
 
         ApiResponse removeAdmin(String username);
 
-        UserProfile setOrUpdateInfo(UserPrincipal currentUser);
-
 }
