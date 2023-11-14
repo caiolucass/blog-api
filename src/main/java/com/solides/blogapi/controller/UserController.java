@@ -15,12 +15,14 @@ import com.solides.blogapi.service.PostService;
 import com.solides.blogapi.service.UserService;
 import com.solides.blogapi.utils.AppConstants;
 import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/api/users")
 public class UserController {
 
@@ -29,12 +31,6 @@ public class UserController {
     private final PostService postService;
 
     private final AlbumService albumService;
-
-    public UserController(UserService userService, PostService postService, AlbumService albumService) {
-        this.userService = userService;
-        this.postService = postService;
-        this.albumService = albumService;
-    }
 
     @GetMapping("/me")
     @PreAuthorize("hasRole('USER')")

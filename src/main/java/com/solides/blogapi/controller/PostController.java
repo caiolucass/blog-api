@@ -10,20 +10,18 @@ import com.solides.blogapi.security.UserPrincipal;
 import com.solides.blogapi.service.PostService;
 import com.solides.blogapi.utils.AppConstants;
 import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/api/posts")
 public class PostController {
 
     private final PostService postService;
-
-    public PostController(PostService postService) {
-        this.postService = postService;
-    }
 
     @GetMapping
     public ResponseEntity<PagedResponse<Post>> getAllPosts(

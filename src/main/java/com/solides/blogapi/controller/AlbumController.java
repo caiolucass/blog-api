@@ -14,23 +14,20 @@ import com.solides.blogapi.service.PhotoService;
 import com.solides.blogapi.utils.AppConstants;
 import com.solides.blogapi.utils.AppUtils;
 import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/api/albums")
 public class AlbumController {
 
     private final AlbumService albumService;
 
     private final PhotoService photoService;
-
-    public AlbumController(AlbumService albumService, PhotoService photoService) {
-        this.albumService = albumService;
-        this.photoService = photoService;
-    }
 
     @ExceptionHandler(ResponseEntityErrorException.class)
     public ResponseEntity<ApiResponse> handleExceptions(ResponseEntityErrorException exception) {

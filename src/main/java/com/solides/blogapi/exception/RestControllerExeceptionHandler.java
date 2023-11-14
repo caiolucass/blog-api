@@ -96,7 +96,7 @@ public class RestControllerExeceptionHandler {
     @ResponseStatus(HttpStatus.METHOD_NOT_ALLOWED)
     @ResponseBody
     public ResponseEntity<ExceptionResponse> resolveException(HttpRequestMethodNotSupportedException ex) {
-        String message = "Metodo request '" + ex.getMethod() + "' nao suportado. Lista de todos os mtodos suportados - "
+        String message = "Metodo request '" + ex.getMethod() + "' nao suportado. Lista de todos os metodos suportados - "
                 + ex.getSupportedHttpMethods();
         List<String> messages = new ArrayList<>(1);
         messages.add(message);
@@ -109,7 +109,7 @@ public class RestControllerExeceptionHandler {
     @ResponseBody
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public ResponseEntity<ExceptionResponse> resolveException(HttpMessageNotReadableException ex) {
-        String message = "Por favor, fornceça uma request em um formato JSON valido.";
+        String message = "Por favor, forneceça uma request em um formato JSON valido.";
         List<String> messages = new ArrayList<>(1);
         messages.add(message);
         return new ResponseEntity<>(new ExceptionResponse(messages, HttpStatus.BAD_REQUEST.getReasonPhrase(),
